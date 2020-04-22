@@ -8,6 +8,9 @@ count = 7
 while True:
     guess = int(input('(%d次數)請輸入數字 %d ~ %d :' % (count, min, max)))
     count -= 1  # count = count - 1
+    if count == 0:
+        print('失敗')
+        break;
     # 先驗證數字是否在合法範圍 ?
     if guess <= min or guess >= max:
         print('數字範圍錯誤, 請重新輸入 !')
