@@ -3,8 +3,8 @@
 若不⾜ 6 (含)點需強迫補牌
 若為 9 點（含）以上不需補牌
 若為 7、8 點則策略補牌
-若為 7 或 7.5 則看 A、2、3, J, Q, K 剩餘的牌 >= 12 (補)
-若為 8 或 8.5 則看 A、2, J, Q, K 剩餘的牌 >= 10 (補)
+若為 7 或 7.5 則看會爆的機率 > 0.5 (不補)
+若為 8 或 8.5 則看會爆的機率 > 0.4 (不補)
 '''
 import random as r
 poker = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K'] * 4
@@ -36,20 +36,18 @@ while True:
         pc.append(poker.pop(0))
         continue
     if 6 < score < 8: # 6.5, 7, 7.5
-        # A、2、3, J, Q, K 剩餘的牌 >= 12 (補)
-        count = poker.count('A') + poker.count(2) + poker.count(3) + poker.count('J') + poker.count('Q') + poker.count('K')
-        if count >= 12:
+        count = poker.count(4) + poker.count(5) + poker.count(6) + poker.count(7) + poker.count(8) + poker.count(9) + poker.count(10)
+        if count/len(poker) > 0.5:
+            break
+        else:
             pc.append(poker.pop(0))
             continue
-        else:
-            break
     if 8 <= score <= 9: # 8, 8.5
-        # A、2、J, Q, K 剩餘的牌 >= 10 (補)
-        count = poker.count('A') + poker.count(2) + poker.count(3) + poker.count('J') + poker.count('Q') + poker.count('K')
-        if count >= 10:
+        count = poker.count(3) + poker.count(4) + poker.count(5) + poker.count(6) + poker.count(7) + poker.count(8) + poker.count(9) + poker.count(10)
+        if count/len(poker) > 0.4:
+            break
+        else:
             pc.append(poker.pop(0))
             continue
-        else:
-            break
 
 print(pc, getscore(pc))
