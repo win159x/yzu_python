@@ -44,6 +44,22 @@ def draw(pc):
             return True
         else:
             return False
+
+def getWinner(user, pc):
+    user_score = getScore(user)
+    pc_score = getScore(pc)
+    if user_score > 10.5 and pc_score > 10.5:
+        return None
+    if user_score <= 10.5 and pc_score > 10.5:
+        return 'user'
+    if user_score > 10.5 and pc_score <= 10.5:
+        return 'pc'
+    if user_score == pc_score:
+        return 'Equal'
+    if user_score > pc_score:
+        return 'user'
+    else:
+        return 'pc'
 # 洗牌
 r.shuffle(poker)
 
@@ -66,3 +82,5 @@ while True:
         continue
     break
 print('pc:', pc, getScore(pc))
+# 誰贏 ?
+print(getWinner(user, pc))
