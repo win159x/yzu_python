@@ -9,9 +9,10 @@ for d in data.get('data'):
     dict = {'title':d.get('title'), 'headlines':d.get('headlines')}
     news_list.append(dict)
 
-file = open('news.txt','a')
+file = open('news.txt', 'w', encoding='UTF-8')
 for news in news_list:
     for head in news['headlines']:
         if '譚' in head[1]:
             print(head)
             file.write(head[1])
+            file.write('\n')
