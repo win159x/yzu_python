@@ -3,7 +3,7 @@ class Salary:
         self.name = name
         self.money = money
     def __str__(self):
-        return str(self.name) + "," + str(self.money)
+        return self.name + "," + str(self.money)
     def __add__(self, n):
         self.money = self.money + n
 
