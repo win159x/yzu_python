@@ -31,7 +31,7 @@ btn = tkinter.Button(win, text="結帳", command=submit)
 label.grid(column=0, row=0, padx=10, pady=10, sticky="w")
 combo.grid(column=0, row=0, padx=70, pady=10, sticky="w")
 label2.grid(column=0, row=1, padx=10, pady=10, sticky="w")
-radio1.grid(column=0, row=1, padx=70, pady=10, sticky="w")
+radio1.grid(column=0, row=1, padx=70, pady=10, sticky="w") # E,S,W,N
 radio2.grid(column=0, row=1, padx=130, pady=10, sticky="w")
 radio3.grid(column=0, row=1, padx=190, pady=10, sticky="w")
 radio4.grid(column=0, row=1, padx=250, pady=10, sticky="w")
