@@ -3,7 +3,7 @@ import tkinter
 win = tkinter.Tk()
 
 win.title('我的小視窗')
-label1 = tkinter.Label(win, text='Hello1')
+label1 = tkinter.Label(win, text='Hello1', fg='yellow', bg='red', font=('Arial', 12))
 label2 = tkinter.Label(win, text='Hello2')
 button1 = tkinter.Button(win, text='Hello3')
 label4 = tkinter.Label(win, text='Hello4')
