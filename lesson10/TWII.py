@@ -12,4 +12,4 @@ for d in data.split("\r\n"):
         if float(list[2]) > 7.0 and \
            float(list[4]) < 10 and \
            float(list[5]) < 1:
-            print(list, end=',')
+            print(list)
