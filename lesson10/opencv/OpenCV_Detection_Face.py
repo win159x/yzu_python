@@ -43,6 +43,9 @@ while True:
     for (x, y, w, h) in faces:
         cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 0, 255), 5)  # 注意：(0, 255, 0) 是 BGR
 
+        # 繪文字
+        cv2.putText(frame, 'aaa', (x, y - 7), 16, 1.2, (0, 255, 0), 2)
+
     # 將 frame 顯示
     cv2.imshow('Detect face', frame)
 
